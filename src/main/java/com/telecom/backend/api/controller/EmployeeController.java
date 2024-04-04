@@ -11,8 +11,6 @@ import com.telecom.backend.api.service.MineService;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import javax.transaction.Transactional;
-
 @RestController
 public class EmployeeController {
 
@@ -22,16 +20,14 @@ public class EmployeeController {
     // Get all employees
     @GetMapping("/employees")
     public ResponseEntity<List<Mine>> getAllEmployees() {
-        System.out.println("Came here");
         List<Mine> employees = mineService.getAllMineEntries().stream().map(this::convertToMine).collect(Collectors.toList());
-        System.out.println("Came here too");
         return ResponseEntity.ok().body(employees);
     }
 
     private Mine convertToMine(MineEntity mineEntity) {
         Mine mine = new Mine();
         mine.setName(mineEntity.getName());
-        mine.setValue(Integer.parseInt(mineEntity.getValue()));
+        mine.setValue(mineEntity.getValue());
         return mine;
     }
 

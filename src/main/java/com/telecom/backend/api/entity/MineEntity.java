@@ -3,7 +3,7 @@ package com.telecom.backend.api.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "MINE")
+@Table(name = "mine")
 public class MineEntity {
 
     @Id

@@ -3,13 +3,13 @@ package com.telecom.backend.api.model;
 public class Mine {
 
     private String name;
-    private int value;
+    private String value;
 
     public String getName() {
         return name;
     }
 
-    public int getValue() {
+    public String getValue() {
         return value;
     }
 
@@ -17,7 +17,7 @@ public class Mine {
         this.name = name;
     }
 
-    public void setValue(int value) {
+    public void setValue(String value) {
         this.value = value;
     }
 
