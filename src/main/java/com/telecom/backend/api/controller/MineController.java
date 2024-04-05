@@ -17,7 +17,7 @@ public class MineController {
 
     @GetMapping("/all")
     public ResponseEntity<List<Mine>> getAllEmployees() {
-        System.out.println("getAllEmployees() pushed..");
+        System.out.println("getAllEmployees() pushed");
         List<Mine> employees = mineService.getAllMineEntries().stream().map(this::convertToMine).collect(Collectors.toList());
         return ResponseEntity.ok().body(employees);
     }
